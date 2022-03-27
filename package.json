@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Ini Buat Backend HariVidio",
+  "main": "index.js",
+  "scripts": {
+    "init:migration": "node_modules/sequelize-cli/bin/sequelize init:migrations --migrations-path tutorial/migrate/mysql/migrations",
+    "init:model": "node_modules/sequelize-cli/bin/sequelize init:models --models-path tutorial/migrate/mysql/models",
+    "init:seeder": "node_modules/sequelize-cli/bin/sequelize init:seeders --seeders-path tutorial/migrate/mysql/seeders",
+    "model:create": "node_modules/sequelize-cli/bin/sequelize model:create --name $NAME --attributes $ATTR --models-path tutorial/migrate/mysql/models --migrations-path tutorial/migrate/mysql/migrations",
+    "migrate": "node_modules/sequelize-cli/bin/sequelize db:migrate --config tutorial/migrate/index.js --migrations-path tutorial/migrate/mysql/migrations",
+    "seed:create": "node_modules/sequelize-cli/bin/sequelize seed:create --name $NAME --config tutorial/migrate/index.js --seeders-path tutorial/migrate/mysql/seeders",
+    "seed": "node_modules/sequelize-cli/bin/sequelize db:seed:all --config tutorial/migrate/index.js --seeders-path tutorial/migrate/mysql/seeders",
+    "start": "nodemon routes/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mail2418/Harividio-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mail2418/Harividio-Backend/issues"
+  },
+  "homepage": "https://github.com/mail2418/Harividio-Backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.17.0"
+  }
+}
